@@ -92,6 +92,4 @@ const server = http.createServer((req,res)=>{
   })
 });
 
-server.listen(port,ip,()=>{
-  console.log(`Server is running at http://${ip}:${port}`);
-});
+server.listen(process.env.PORT);
