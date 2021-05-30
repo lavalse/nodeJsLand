@@ -54,7 +54,7 @@ const server = http.createServer((req,res)=>{
               filesList[i] = {name:e};
               filesList[i].size = Math.ceil(parseInt(stats.size)/1024);
               filesList[i].mtime = timeConvert(stats.mtime);
-              filesList[i].path = `http://${ip}:${port}${url}/${e}`;
+              filesList[i].path = `http://${process.env.PORT}${url}/${e}`;
               if(stats.isDirectory()){
                 filesList[i].isFolder = true;
               }else{
