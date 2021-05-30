@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      padding: 24px 64px;
+    }
+    .directory{
+      min-height: 400px;
+    }
+    .element{
+      display: flex;
+      width: 100%;
+      justify-content: flex-start;
+    }
+    .info{
+      margin-right: 24px;
+    }
+
+    #mtime{
+      width: 200px;;
+    }
+
+    #nameBox{
+      width: 150px;
+      display: flex;
+      align-items: center;
+    }
+    .icon{
+      margin-right: 24px;
+    }
+    .name{
+      width: 100px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title">
+      <h1>{{url}}</h1>
+      <div>
+        <h2>
+          <a href="/">🏠</a>
+        </h2>
+      </div>
+    </div>
+    <div class="element">
+      <div class="info" id="nameBox">Name</div>
+      <div class="info" id="mtime">Last modified</div>
+      <div class="info" >Size</div>
+    </div>
+  </div>
+  <hr>
+  <div class="directory">
+    {{if isEmpty}}
+      <div class="element" id="empty">
+        <p>🤧  ... the directory is empty ...</p>
+      </div> 
+    {{/if}}
+    {{each list}}
+      <div class="element">
+        <div class="info" id="nameBox">
+          <div class="icon">
+            {{if $value.isFolder}} 📁 {{else}} 📝 {{/if}}
+          </div>
+          <div class="name" >
+            <a href="{{$value.path}}">{{$value.name}}</a>
+          </div>
+        </div>
+        <div class="info" id="mtime">
+          <p>{{$value.mtime}}</p>
+        </div>
+        <div class="info">
+          <p>{{$value.size}} kb</p>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+  <hr>
+  <div class="footer">
+    <p>Apach like server project</p>
+  </div>
+</body>
+</html>

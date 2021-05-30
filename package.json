@@ -1,20 +1,18 @@
 {
-  "name": "nodejsland",
+  "name": "lesson_4_apacheserver",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lavalse/nodeJsLand.git"
+    "start": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/lavalse/nodeJsLand/issues"
+  "dependencies": {
+    "art-template": "^4.13.2"
   },
-  "homepage": "https://github.com/lavalse/nodeJsLand#readme"
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
 }
