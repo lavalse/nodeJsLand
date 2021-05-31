@@ -54,11 +54,13 @@ const server = http.createServer((req,res)=>{
               filesList[i] = {name:e};
               filesList[i].size = Math.ceil(parseInt(stats.size)/1024);
               filesList[i].mtime = timeConvert(stats.mtime);
-              filesList[i].path = `${url}/${e}`;
               if(stats.isDirectory()){
                 filesList[i].isFolder = true;
+                filesList[i].path = `${e}/`;
               }else{
                 filesList[i].isFolder = false;
+                filesList[i].path = `${e}`;
+
               };
             });
           }else(
