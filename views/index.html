@@ -32,6 +32,7 @@
     }
     .icon{
       margin-right: 24px;
+      width: 24px;
     }
     .name{
       width: 100px;
@@ -69,7 +70,11 @@
       <div class="element">
         <div class="info" id="nameBox">
           <div class="icon">
-            {{if $value.isFolder}} 📁 {{else}} 📝 {{/if}}
+            {{if $value.isFolder}} 
+              <img class="icon" src="/public/img/folder.png" alt="folder-img" >
+            {{else}} 
+              <img class="icon" src="/public/img/file.png" alt="file-img" > 
+            {{/if}}
           </div>
           <div class="name" >
             <a href="{{$value.path}}">{{$value.name}}</a>
