@@ -117,4 +117,6 @@ const server = http.createServer((req,res)=>{
   });
 });
 
-server.listen(process.env.PORT);
+server.listen(port,()=>{
+  console.log("server is running")
+});

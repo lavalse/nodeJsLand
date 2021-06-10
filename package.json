@@ -1,8 +1,9 @@
 {
   "name": "lesson_4_apacheserver",
   "version": "1.0.0",
-  "description": "",
+  "description": "this is a aparchi like app",
   "main": "server.js",
+  "private": "true",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
